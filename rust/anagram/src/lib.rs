@@ -3,9 +3,9 @@ use std::collections::HashSet;
 
 pub fn anagrams_for<'a>(word: &str, possible_anagrams: &'a [&str]) -> HashSet<&'a str> {
     let word = word.to_lowercase();
-    let anagrams = word.chars().fold(HashMap::new(), |mut anagrams, c| {
-        *anagrams.entry(c).or_insert(0) += 1;
-        anagrams
+    let word_map = word.chars().fold(HashMap::new(), |mut map, c| {
+        *map.entry(c).or_insert(0) += 1;
+        map
     });
 
     possible_anagrams
@@ -15,11 +15,11 @@ pub fn anagrams_for<'a>(word: &str, possible_anagrams: &'a [&str]) -> HashSet<&'
                 return false;
             }
             let anagram = anagram.to_lowercase();
-            let charmap = anagram.chars().fold(HashMap::new(), |mut anagrams, c| {
-                *anagrams.entry(c).or_insert(0) += 1;
-                anagrams
+            let anagram_map = anagram.chars().fold(HashMap::new(), |mut map, c| {
+                *map.entry(c).or_insert(0) += 1;
+                map
             });
-            anagram != word && charmap == anagrams
+            anagram != word && anagram_map == word_map
         })
         .map(|x| *x)
         .collect::<HashSet<&str>>()
