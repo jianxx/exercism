@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// Distance should have a comment documenting it.
+// Distance returns the Hamming Distance between two strings.
 func Distance(a, b string) (int, error) {
 	diff := 0
 	if len(a) != len(b) {
