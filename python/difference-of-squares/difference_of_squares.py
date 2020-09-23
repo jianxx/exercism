@@ -1,15 +1,9 @@
 def square_of_sum(number):
-    result = 0
-    for i in range(number + 1):
-        result = result + i
-    return result * result
+    return sum(range(number + 1) ** 2)
 
 
 def sum_of_squares(number):
-    result = 0
-    for i in range(number + 1):
-        result = result + i * i
-    return result
+    return sum(map(lambda n: n ** 2, range(number + 1)))
 
 
 def difference_of_squares(number):
