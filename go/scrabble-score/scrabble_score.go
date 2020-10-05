@@ -6,10 +6,10 @@ import (
 
 // Score : given a word, compute the Scrabble score for that word.
 func Score(input string) int {
-	var values = [26]int{1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10}
+	var valueMap = map[rune]int{'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10}
 	var score = 0
 	for _, c := range strings.ToLower(input) {
-		score += values[c-'a']
+		score += valueMap[c]
 	}
 	return score
 }
