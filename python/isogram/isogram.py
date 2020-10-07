@@ -1,11 +1,6 @@
-from string import ascii_lowercase
+import re
 
 
 def is_isogram(string):
-    charset = set()
-    for c in string.lower():
-        if c in ascii_lowercase:
-            if c in charset:
-                return False
-            charset.add(c)
-    return True
+    word = re.sub("[^a-z]", "", string.lower())
+    return len(word) == len(set(word))
