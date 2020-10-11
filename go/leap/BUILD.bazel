@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "leap",
+    srcs = ["leap.go"],
+    importpath = "leap",
+)
+
+go_test(
+    name = "leap_test",
+    srcs = [
+        "cases_test.go",
+        "leap_test.go",
+    ],
+    embed = [":leap"],
+)

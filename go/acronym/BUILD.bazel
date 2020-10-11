@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "acronym",
+    srcs = ["acronym.go"],
+    importpath = "acronym",
+)
+
+go_test(
+    name = "acronym_test",
+    srcs = [
+        "acronym_test.go",
+        "cases_test.go",
+    ],
+    embed = [":acronym"],
+)

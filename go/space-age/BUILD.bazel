@@ -1,0 +1,17 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "space_age",
+    srcs = ["space_age.go"],
+    importpath = "space",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "space_age_test",
+    srcs = [
+        "cases_test.go",
+        "space_age_test.go",
+    ],
+    embed = [":space_age"],
+)

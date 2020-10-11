@@ -1,0 +1,13 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "strain",
+    srcs = ["strain.go"],
+    importpath = "strain",
+)
+
+go_test(
+    name = "strain_test",
+    srcs = ["strain_test.go"],
+    embed = [":strain"],
+)

@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "scrabble_score",
+    srcs = ["scrabble_score.go"],
+    importpath = "scrabble",
+)
+
+go_test(
+    name = "scrabble_score_test",
+    srcs = [
+        "cases_test.go",
+        "scrabble_score_test.go",
+    ],
+    embed = [":scrabble_score"],
+)

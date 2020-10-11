@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "two_fer",
+    srcs = ["two_fer.go"],
+    importpath = "twofer",
+)
+
+go_test(
+    name = "two_fer_test",
+    srcs = [
+        "example_two_fer_test.go",
+        "two_fer_test.go",
+    ],
+    embed = [":two_fer"],
+)

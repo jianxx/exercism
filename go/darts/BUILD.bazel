@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "darts",
+    srcs = ["darts.go"],
+    importpath = "darts",
+)
+
+go_test(
+    name = "darts_test",
+    srcs = [
+        "cases_test.go",
+        "darts_test.go",
+    ],
+    embed = [":darts"],
+)

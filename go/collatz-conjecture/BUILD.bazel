@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "collatz-conjecture",
+    srcs = ["collatz_conjecture.go"],
+    importpath = "collatz-conjecture",
+)
+
+go_test(
+    name = "collatzconjecture_test",
+    srcs = [
+        "cases_test.go",
+        "collatz_conjecture_test.go",
+    ],
+    embed = [":collatz-conjecture"],
+)

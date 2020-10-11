@@ -1,0 +1,13 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "triangle",
+    srcs = ["triangle.go"],
+    importpath = "triangle",
+)
+
+go_test(
+    name = "triangle_test",
+    srcs = ["triangle_test.go"],
+    embed = [":triangle"],
+)

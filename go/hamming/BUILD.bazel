@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "hamming",
+    srcs = ["hamming.go"],
+    importpath = "hamming",
+)
+
+go_test(
+    name = "hamming_test",
+    srcs = [
+        "cases_test.go",
+        "hamming_test.go",
+    ],
+    embed = [":hamming"],
+)

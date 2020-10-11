@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "isogram",
+    srcs = ["isogram.go"],
+    importpath = "isogram",
+)
+
+go_test(
+    name = "isogram_test",
+    srcs = [
+        "cases_test.go",
+        "isogram_test.go",
+    ],
+    embed = [":isogram"],
+)

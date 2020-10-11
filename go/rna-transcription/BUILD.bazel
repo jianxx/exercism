@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "rna_transcription",
+    srcs = ["rna_transcription.go"],
+    importpath = "strand",
+)
+
+go_test(
+    name = "rna_transcription_test",
+    srcs = [
+        "cases_test.go",
+        "rna_transcription_test.go",
+    ],
+    embed = [":rna_transcription"],
+)

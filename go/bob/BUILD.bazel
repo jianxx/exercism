@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "bob",
+    srcs = ["bob.go"],
+    importpath = "bob",
+)
+
+go_test(
+    name = "bob_test",
+    srcs = [
+        "bob_test.go",
+        "cases_test.go",
+    ],
+    embed = [":bob"],
+)

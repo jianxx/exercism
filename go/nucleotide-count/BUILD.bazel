@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "nucleotide-count",
+    srcs = ["nucleotide_count.go"],
+    importpath = "dna",
+)
+
+go_test(
+    name = "nucleotidecount_test",
+    srcs = [
+        "cases_test.go",
+        "nucleotide_count_test.go",
+    ],
+    embed = [":nucleotide-count"],
+)

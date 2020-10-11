@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "romannumerals",
+    srcs = ["roman_numerals.go"],
+    importpath = "romannumerals",
+)
+
+go_test(
+    name = "romannumerals_test",
+    srcs = [
+        "cases_test.go",
+        "roman_numerals_test.go",
+    ],
+    embed = [":romannumerals"],
+)

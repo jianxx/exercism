@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "gigasecond",
+    srcs = ["gigasecond.go"],
+    importpath = "gigasecond",
+)
+
+go_test(
+    name = "gigasecond_test",
+    srcs = [
+        "cases_test.go",
+        "gigasecond_test.go",
+    ],
+    embed = [":gigasecond"],
+)
