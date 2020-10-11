@@ -1,0 +1,22 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "leap",
+    srcs = ["leap.cpp"],
+    hdrs = ["leap.h"],
+)
+
+cc_library(
+    name = "test-main",
+    srcs = ["test/tests-main.cpp"],
+    hdrs = ["test/catch.hpp"],
+)
+
+cc_test(
+    name = "unittest",
+    srcs = ["leap_test.cpp"],
+    deps = [
+        ":leap",
+        ":test-main",
+    ],
+)

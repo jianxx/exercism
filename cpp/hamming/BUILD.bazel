@@ -1,0 +1,22 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "hamming",
+    srcs = ["hamming.cpp"],
+    hdrs = ["hamming.h"],
+)
+
+cc_library(
+    name = "test-main",
+    srcs = ["test/tests-main.cpp"],
+    hdrs = ["test/catch.hpp"],
+)
+
+cc_test(
+    name = "unittest",
+    srcs = ["hamming_test.cpp"],
+    deps = [
+        ":hamming",
+        ":test-main",
+    ],
+)
