@@ -1,0 +1,57 @@
+load("@rules_python//python:defs.bzl", "py_test")
+
+py_test(
+    name = "hello_world_test",
+    srcs = [
+        "hello-world/hello_world.py",
+        "hello-world/hello_world_test.py",
+    ],
+)
+
+py_test(
+    name = "anagram_test",
+    srcs = [
+        "anagram/anagram.py",
+        "anagram/anagram_test.py",
+    ],
+)
+
+py_test(
+    name = "armstrong_numbers_test",
+    srcs = [
+        "armstrong-numbers/armstrong_numbers.py",
+        "armstrong-numbers/armstrong_numbers_test.py",
+    ],
+)
+
+py_test(
+    name = "bank_account_test",
+    srcs = [
+        "bank-account/bank_account.py",
+        "bank-account/bank_account_test.py",
+    ],
+)
+
+py_test(
+    name = "bob_test",
+    srcs = [
+        "bob/bob.py",
+        "bob/bob_test.py",
+    ],
+)
+
+py_test(
+    name = "collatz_conjecture_test",
+    srcs = [
+        "collatz-conjecture/collatz_conjecture.py",
+        "collatz-conjecture/collatz_conjecture_test.py",
+    ],
+)
+
+py_test(
+    name = "complex_numbers_test",
+    srcs = [
+        "complex-numbers/complex_numbers.py",
+        "complex-numbers/complex_numbers_test.py",
+    ],
+)
