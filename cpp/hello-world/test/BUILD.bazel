@@ -1,8 +1,0 @@
-load("@rules_cc//cc:defs.bzl", "cc_library")
-
-cc_library(
-    name = "test",
-    srcs = ["tests-main.cpp"],
-    hdrs = ["catch.hpp"],
-    visibility = ["//visibility:public"],
-)

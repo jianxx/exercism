@@ -6,11 +6,17 @@ cc_library(
     hdrs = ["hello_world.h"],
 )
 
+cc_library(
+    name = "test-main",
+    srcs = ["test/tests-main.cpp"],
+    hdrs = ["test/catch.hpp"],
+)
+
 cc_test(
-    name = "hello-world-test",
+    name = "unittest",
     srcs = ["hello_world_test.cpp"],
     deps = [
         "//:hello-world",
-        "//test",
+        "//:test-main",
     ],
 )
