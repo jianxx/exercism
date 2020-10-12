@@ -6,3 +6,14 @@ version = "0.0.0"
 [dependencies]
 lazy_static = "1.4.0"
 rand = "0.7.3"
+
+[lib]
+path = "src/lib.rs"
+
+[raze]
+# The WORKSPACE relative path to the Cargo.toml working directory.
+workspace_path = "//rust/robot-name/cargo"
+target = "x86_64-unknown-linux-gnu"
+genmode = "Remote"
+gen_workspace_prefix = "robot_name"
+incompatible_relative_workspace_path = true

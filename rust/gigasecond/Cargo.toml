@@ -6,3 +6,13 @@ version = "2.0.0"
 [dependencies]
 chrono = "0.4"
 
+[lib]
+path = "src/lib.rs"
+
+[raze]
+# The WORKSPACE relative path to the Cargo.toml working directory.
+workspace_path = "//rust/gigasecond/cargo"
+target = "x86_64-unknown-linux-gnu"
+genmode = "Remote"
+gen_workspace_prefix = "gigasecond"
+incompatible_relative_workspace_path = true

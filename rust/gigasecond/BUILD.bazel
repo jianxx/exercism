@@ -1,0 +1,18 @@
+load("@io_bazel_rules_rust//rust:rust.bzl", "rust_library", "rust_test")
+
+rust_library(
+    name = "gigasecond",
+    srcs = ["src/lib.rs"],
+    deps = [
+        "//rust/gigasecond/cargo:chrono",
+    ],
+)
+
+rust_test(
+    name = "unittest",
+    srcs = ["tests/gigasecond.rs"],
+    deps = [
+        ":gigasecond",
+        "//rust/gigasecond/cargo:chrono",
+    ],
+)

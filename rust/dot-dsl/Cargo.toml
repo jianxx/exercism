@@ -5,3 +5,14 @@ version = "0.1.0"
 
 [dependencies]
 maplit = "1.0.1"
+
+[lib]
+path = "src/lib.rs"
+
+[raze]
+# The WORKSPACE relative path to the Cargo.toml working directory.
+workspace_path = "//rust/dot-dsl/cargo"
+target = "x86_64-unknown-linux-gnu"
+genmode = "Remote"
+gen_workspace_prefix = "dot_dsl"
+incompatible_relative_workspace_path = true

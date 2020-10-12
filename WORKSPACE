@@ -50,6 +50,18 @@ load("@io_bazel_rules_rust//:workspace.bzl", "rust_workspace")
 
 rust_workspace()
 
+load("//rust/gigasecond/cargo:crates.bzl", "gigasecond_fetch_remote_crates")
+
+gigasecond_fetch_remote_crates()
+
+load("//rust/dot-dsl/cargo:crates.bzl", "dot_dsl_fetch_remote_crates")
+
+dot_dsl_fetch_remote_crates()
+
+load("//rust/robot-name/cargo:crates.bzl", "robot_name_fetch_remote_crates")
+
+robot_name_fetch_remote_crates()
+
 ## add the external repositories for the Python toolchain
 http_archive(
     name = "rules_python",
@@ -57,3 +69,5 @@ http_archive(
     strip_prefix = "rules_python-0.0.2",
     url = "https://github.com/bazelbuild/rules_python/releases/download/0.0.2/rules_python-0.0.2.tar.gz",
 )
+
+register_toolchains("//python:py_toolchain")

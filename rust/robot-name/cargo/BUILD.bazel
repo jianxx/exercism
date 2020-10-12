@@ -1,0 +1,31 @@
+"""
+@generated
+cargo-raze workspace build file.
+
+DO NOT EDIT! Replaced on runs of cargo-raze
+"""
+
+package(default_visibility = ["//visibility:public"])
+
+licenses([
+    "notice",  # See individual crates for specific licenses
+])
+
+# Aliased targets
+alias(
+    name = "lazy_static",
+    actual = "@robot_name__lazy_static__1_4_0//:lazy_static",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "rand",
+    actual = "@robot_name__rand__0_7_3//:rand",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
