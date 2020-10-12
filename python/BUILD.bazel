@@ -9,14 +9,6 @@ py_test(
 )
 
 py_test(
-    name = "anagram_test",
-    srcs = [
-        "anagram/anagram.py",
-        "anagram/anagram_test.py",
-    ],
-)
-
-py_test(
     name = "armstrong_numbers_test",
     srcs = [
         "armstrong-numbers/armstrong_numbers.py",
@@ -29,14 +21,6 @@ py_test(
     srcs = [
         "bank-account/bank_account.py",
         "bank-account/bank_account_test.py",
-    ],
-)
-
-py_test(
-    name = "bob_test",
-    srcs = [
-        "bob/bob.py",
-        "bob/bob_test.py",
     ],
 )
 
@@ -54,4 +38,92 @@ py_test(
         "complex-numbers/complex_numbers.py",
         "complex-numbers/complex_numbers_test.py",
     ],
+)
+
+py_test(
+    name = "difference_of_squares_test",
+    srcs = [
+        "difference-of-squares/difference_of_squares.py",
+        "difference-of-squares/difference_of_squares_test.py",
+    ],
+)
+
+py_test(
+    name = "high_scores_test",
+    srcs = glob(["high-scores/*.py"]),
+)
+
+py_test(
+    name = "isbn_verifier_test",
+    srcs = glob(["isbn-verifier/*.py"]),
+)
+
+py_test(
+    name = "matching_brackets_test",
+    srcs = glob(["matching-brackets/*.py"]),
+)
+
+py_test(
+    name = "perfect_numbers_test",
+    srcs = glob(["perfect-numbers/*.py"]),
+)
+
+py_test(
+    name = "phone_number_test",
+    srcs = glob(["phone-number/*.py"]),
+)
+
+py_test(
+    name = "prime_factors_test",
+    srcs = glob(["prime-factors/*.py"]),
+)
+
+py_test(
+    name = "protein_translation_test",
+    srcs = glob(["protein-translation/*.py"]),
+)
+
+py_test(
+    name = "rational_numbers_test",
+    srcs = glob(["rational-numbers/*.py"]),
+)
+
+py_test(
+    name = "reverse_string_test",
+    srcs = glob(["reverse-string/*.py"]),
+)
+
+py_test(
+    name = "rna_transcription_test",
+    srcs = glob(["rna-transcription/*.py"]),
+)
+
+py_test(
+    name = "robot_name_test",
+    srcs = glob(["robot-name/*.py"]),
+)
+
+py_test(
+    name = "saddle_points_test",
+    srcs = glob(["saddle-points/*.py"]),
+)
+
+py_test(
+    name = "space_age_test",
+    srcs = glob(["space-age/*.py"]),
+)
+
+py_test(
+    name = "sum_of_multiples_test",
+    srcs = glob(["sum-of-multiples/*.py"]),
+)
+
+py_test(
+    name = "twelve_days_test",
+    srcs = glob(["twelve-days/*.py"]),
+)
+
+py_test(
+    name = "two_fer_test",
+    srcs = glob(["two-fer/*.py"]),
 )

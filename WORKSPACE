@@ -71,5 +71,3 @@ http_archive(
     strip_prefix = "rules_python-0.0.2",
     url = "https://github.com/bazelbuild/rules_python/releases/download/0.0.2/rules_python-0.0.2.tar.gz",
 )
-
-register_toolchains("//python:py_toolchain")
