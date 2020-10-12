@@ -1,3 +1,5 @@
+workspace(name = "exercism")
+
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 ## add the external repositories for the Golang toolchain
