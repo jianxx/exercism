@@ -71,3 +71,30 @@ http_archive(
     strip_prefix = "rules_python-0.0.2",
     url = "https://github.com/bazelbuild/rules_python/releases/download/0.0.2/rules_python-0.0.2.tar.gz",
 )
+
+## add the external repositories for the Java toolchain
+RULES_JVM_EXTERNAL_TAG = "3.3"
+
+RULES_JVM_EXTERNAL_SHA = "d85951a92c0908c80bd8551002d66cb23c3434409c814179c0ff026b53544dab"
+
+http_archive(
+    name = "rules_jvm_external",
+    sha256 = RULES_JVM_EXTERNAL_SHA,
+    strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
+    url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
+)
+
+load("@rules_jvm_external//:defs.bzl", "maven_install")
+
+maven_install(
+    artifacts = [
+        "junit:junit:4.13",
+        "org.assertj:assertj-core:3.15.0",
+        "com.google.guava:guava:28.0-jre",
+    ],
+    fetch_sources = True,
+    repositories = [
+        "https://maven.aliyun.com/repository/public",
+        "https://maven.aliyun.com/repository/spring/",
+    ],
+)
