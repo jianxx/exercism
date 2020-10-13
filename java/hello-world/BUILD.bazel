@@ -1,0 +1,14 @@
+load("@rules_java//java:defs.bzl", "java_library", "java_test")
+
+java_library(
+    name = "hello-world",
+    srcs = glob(["src/main/**/*.java"]),
+)
+
+java_test(
+    name = "GreeterTest",
+    srcs = glob(["src/test/**/*.java"]),
+    deps = [
+        ":hello-world",
+    ],
+)
