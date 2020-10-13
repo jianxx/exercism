@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "reverse-string",
+    srcs = ["reverse_string.go"],
+    importpath = "reverse",
+)
+
+go_test(
+    name = "reverse_string_test",
+    srcs = [
+        "cases_test.go",
+        "reverse_string_test.go",
+    ],
+    embed = [":reverse-string"],
+)
