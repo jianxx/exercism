@@ -1,19 +1,11 @@
 package diffsquares
 
 func SquareOfSum(n int) int {
-	total := 0
-	for i := 1; i < n+1; i++ {
-		total += i
-	}
-	return total * total
+	return (n * n * (n + 1) * (n + 1)) / 4
 }
 
 func SumOfSquares(n int) int {
-	total := 0
-	for i := 1; i < n+1; i++ {
-		total += i * i
-	}
-	return total
+	return (n * (n + 1) * (2*n + 1)) / 6
 }
 
 func Difference(n int) int {
