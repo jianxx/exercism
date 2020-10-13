@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "pangram",
+    srcs = ["pangram.go"],
+    importpath = "pangram",
+)
+
+go_test(
+    name = "pangram_test",
+    srcs = [
+        "cases_test.go",
+        "pangram_test.go",
+    ],
+    embed = [":pangram"],
+)
