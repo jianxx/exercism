@@ -1,0 +1,22 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "nucleotide-count",
+    srcs = ["nucleotide_count.cpp"],
+    hdrs = ["nucleotide_count.h"],
+)
+
+cc_library(
+    name = "test-main",
+    srcs = ["test/tests-main.cpp"],
+    hdrs = ["test/catch.hpp"],
+)
+
+cc_test(
+    name = "unittest",
+    srcs = ["nucleotide_count_test.cpp"],
+    deps = [
+        ":nucleotide-count",
+        ":test-main",
+    ],
+)
