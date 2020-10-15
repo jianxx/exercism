@@ -1,0 +1,22 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "space-age",
+    srcs = ["space_age.cpp"],
+    hdrs = ["space_age.h"],
+)
+
+cc_library(
+    name = "test-main",
+    srcs = ["test/tests-main.cpp"],
+    hdrs = ["test/catch.hpp"],
+)
+
+cc_test(
+    name = "unittest",
+    srcs = ["space_age_test.cpp"],
+    deps = [
+        ":space-age",
+        ":test-main",
+    ],
+)
