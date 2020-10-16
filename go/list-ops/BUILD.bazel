@@ -1,0 +1,13 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "list-ops",
+    srcs = ["list_ops.go"],
+    importpath = "list-ops",
+)
+
+go_test(
+    name = "list-ops_test",
+    srcs = ["list_ops_test.go"],
+    embed = [":list-ops"],
+)
