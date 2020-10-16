@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "scale_generator",
+    srcs = ["scale_generator.go"],
+    importpath = "scale",
+)
+
+go_test(
+    name = "scale_generator_test",
+    srcs = [
+        "cases_test.go",
+        "scale_generator_test.go",
+    ],
+    embed = [":scale_generator"],
+)
