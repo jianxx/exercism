@@ -1,0 +1,22 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "triangle",
+    srcs = ["triangle.cpp"],
+    hdrs = ["triangle.h"],
+)
+
+cc_library(
+    name = "test-main",
+    srcs = ["test/tests-main.cpp"],
+    hdrs = ["test/catch.hpp"],
+)
+
+cc_test(
+    name = "unittest",
+    srcs = ["triangle_test.cpp"],
+    deps = [
+        ":test-main",
+        ":triangle",
+    ],
+)
