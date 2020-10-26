@@ -1,0 +1,22 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "raindrops",
+    srcs = ["raindrops.cpp"],
+    hdrs = ["raindrops.h"],
+)
+
+cc_library(
+    name = "test-main",
+    srcs = ["test/tests-main.cpp"],
+    hdrs = ["test/catch.hpp"],
+)
+
+cc_test(
+    name = "unittest",
+    srcs = ["raindrops_test.cpp"],
+    deps = [
+        ":raindrops",
+        ":test-main",
+    ],
+)
