@@ -8,4 +8,4 @@ public class GreeterTest {
   public void testThatGreeterReturnsTheCorrectGreeting() {
     assertEquals("Hello, World!", new Greeter().getGreeting());
   }
-} 
+}
