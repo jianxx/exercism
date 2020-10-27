@@ -1,3 +1,6 @@
+## This BUILD.bazel is a workaround for this limitation:
+##      paths to Python packages may not contain '-'.
+
 load("@rules_python//python:defs.bzl", "py_test")
 
 py_test(
