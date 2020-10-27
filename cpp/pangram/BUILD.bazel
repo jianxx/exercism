@@ -1,0 +1,22 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "pangram",
+    srcs = ["pangram.cpp"],
+    hdrs = ["pangram.h"],
+)
+
+cc_library(
+    name = "test-main",
+    srcs = ["test/tests-main.cpp"],
+    hdrs = ["test/catch.hpp"],
+)
+
+cc_test(
+    name = "unittest",
+    srcs = ["pangram_test.cpp"],
+    deps = [
+        ":pangram",
+        ":test-main",
+    ],
+)
