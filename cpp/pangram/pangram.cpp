@@ -1,12 +1,13 @@
 #include "pangram.h"
 
-#include <set>
+#include <cctype>
+#include <unordered_set>
 namespace pangram {
-bool is_pangram(const string word) {
-    set<char> charSet;
+bool is_pangram(const string& word) {
+    unordered_set<char> charSet;
     for (auto i = word.cbegin(); i != word.cend(); ++i) {
         char c = tolower(*i);
-        if (c >= 'a' && c <= 'z') {
+        if (isalpha(c)) {
             charSet.insert(c);
         }
     }
